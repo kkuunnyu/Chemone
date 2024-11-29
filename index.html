@@ -117,6 +117,10 @@
 			align-items: center;
 		}
 
+		.dropdown a{
+			font-weight: bold;
+		}
+
 		/* hover 시 부드러운 전환 효과 */
 		.dropdown-container,
 		.dropdown-box {
@@ -233,6 +237,10 @@
 		/* hover 효과 유지 */
 		.dropdown-content:hover {
 			display: block;
+		}
+
+		.dropdown-content a:hover{
+			font-weight: bold;
 		}
 
 		nav:hover .dropdown-content {
@@ -408,7 +416,7 @@
 
 		/* dropdown hover 시 텍스트 색상 변경 */
 		nav .dropdown:hover>a {
-			color: #000;
+			color: #001c54;
 		}
 
 
@@ -485,7 +493,7 @@
 
 		/* 스크롤 시 적용될 클래스 */
 		header.scrolled nav a {
-			color: #000;
+			color: #001c54;
 		}
 
 		/* 드롭다운 컨텐츠 링크 스타일 */
@@ -773,11 +781,11 @@
 		}
 
 		header.scrolled .hamburger span {
-			background: #000;
+			background: #001c54;
 		}
 
 		.hamburger .active span {
-			background: #000;
+			background: #001c54;
 		}
 
 		.hamburger span:nth-child(1) {
@@ -833,6 +841,10 @@
 
 			.content-section {
 				padding: 80px 15px;
+			}
+
+			.dropdown-box {
+				top: 90%;
 			}
 
 			.image-grid {
