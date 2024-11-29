@@ -108,6 +108,70 @@
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 		}
 
+		/* 스크롤 다운 애니메이션 */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scroll 1.5s infinite;
+}
+
+.arrow {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: 10px auto;
+    animation: arrow 1.5s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translate(10px, 10px);
+        opacity: 0;
+    }
+}
+
 
 		/* 드롭다운 기본 스타일 */
 		.dropdown {
@@ -1090,6 +1154,12 @@
 			<video autoplay muted loop playsinline>
 				<source src="/images/켐원_메인페이지_영상.mp4" type="video/mp4">
 			</video>
+		</div>
+		<div class="scroll-down">
+			<div class="mouse">
+				<div class="wheel"></div>
+			</div>
+			<div class="arrow"></div>
 		</div>
 	</section>
 
