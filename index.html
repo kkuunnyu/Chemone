@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./reset.css">
 	<title>켐원 | CHEMONE</title>
-	<link rel="icon" href="/images/chemone_favicon.png" type="image/x-icon"> 
+	<link rel="icon" href="/images/chemone_favicon.png" type="image/x-icon">
 	<style>
 		* {
 			margin: 0;
@@ -762,15 +762,15 @@
 			height: 20px;
 		}
 
-/* 햄버거 메뉴 아이콘 스타일 */
-.hamburger span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    transition: all 0.3s ease;
-}
+		/* 햄버거 메뉴 아이콘 스타일 */
+		.hamburger span {
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #fff;
+			position: absolute;
+			transition: all 0.3s ease;
+		}
 
 		header.scrolled .hamburger span {
 			background: #000;
@@ -843,32 +843,33 @@
 			}
 
 			.rectangle-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .rectangle-item {
-        max-width: 380px;
-        width: 100%;
-    }
+				grid-template-columns: repeat(2, 1fr);
+				gap: 40px;
+				max-width: 800px;
+				margin: 0 auto;
+			}
 
-	.rectangle-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+			.rectangle-item {
+				max-width: 380px;
+				width: 100%;
+			}
 
-    .first-section .fade-item {
-        max-width: 100%;
-    }
+			.rectangle-item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 
-    .first-section .fade-item img {
-        max-width: 500px;
-        width: 100%;
-        height: auto;
-        margin: 40px auto;
-    }
+			.first-section .fade-item {
+				max-width: 100%;
+			}
+
+			.first-section .fade-item img {
+				max-width: 500px;
+				width: 100%;
+				height: auto;
+				margin: 40px auto;
+			}
 
 			.first-section {
 				padding: 60px 15px;
@@ -928,6 +929,15 @@
 				height: 100%;
 			}
 
+			/* 기존 nav 스타일 숨김 처리 */
+			.dropdown-container {
+				display: none;
+			}
+
+			.dropdown-box {
+				display: none;
+			}
+
 			nav {
 				position: fixed;
 				top: 0;
@@ -942,9 +952,20 @@
 				z-index: 1000;
 			}
 
+			/* 햄버거 메뉴 활성화 시에만 nav 표시 */
 			nav.active {
 				right: 0;
+				display: flex;
 			}
+
+			nav.active .dropdown-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+			}
+
+
 
 			/* 햄버거 메뉴 활성화 시에도 텍스트 색상 유지 */
 			nav.active a,
@@ -997,16 +1018,16 @@
 			}
 
 			.first-section .fade-item {
-        max-width: 100%;
-    }
+				max-width: 100%;
+			}
 
 
-    .first-section .fade-item img {
-        max-width: 400px;
-        width: 90%;
-        height: auto;
-        margin: 30px auto;
-    }
+			.first-section .fade-item img {
+				max-width: 400px;
+				width: 90%;
+				height: auto;
+				margin: 30px auto;
+			}
 
 			.first-section {
 				padding: 40px 15px;
