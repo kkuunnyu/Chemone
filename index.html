@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./reset.css">
 	<title>켐원 | CHEMONE</title>
+	<link rel="icon" href="/images/chemone_favicon.png" type="image/x-icon"> 
 	<style>
 		* {
 			margin: 0;
@@ -754,17 +755,22 @@
 			display: none;
 			position: fixed;
 			right: 20px;
-			top: 20px;
+			top: 30px;
 			z-index: 1001;
 			cursor: pointer;
 			width: 30px;
 			height: 20px;
 		}
 
-		.hamburger span {
-			background: #fff;
-			transition: all 0.3s ease;
-		}
+/* 햄버거 메뉴 아이콘 스타일 */
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all 0.3s ease;
+}
 
 		header.scrolled .hamburger span {
 			background: #000;
