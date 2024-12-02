@@ -109,68 +109,71 @@
 		}
 
 		/* 스크롤 다운 애니메이션 */
-.scroll-down {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-}
+		.scroll-down {
+			position: absolute;
+			bottom: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
 
-.mouse {
-    width: 30px;
-    height: 50px;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    position: relative;
-}
+		.mouse {
+			width: 30px;
+			height: 50px;
+			border: 2px solid #fff;
+			border-radius: 20px;
+			position: relative;
+		}
 
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: #fff;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-    animation: scroll 1.5s infinite;
-}
+		.wheel {
+			width: 4px;
+			height: 8px;
+			background: #fff;
+			position: absolute;
+			top: 8px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 2px;
+			animation: scroll 1.5s infinite;
+		}
 
-.arrow {
-    width: 12px;
-    height: 12px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transform: rotate(45deg);
-    margin: 10px auto;
-    animation: arrow 1.5s infinite;
-}
+		.arrow {
+			width: 12px;
+			height: 12px;
+			border-right: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+			transform: rotate(45deg);
+			margin: 10px auto;
+			animation: arrow 1.5s infinite;
+		}
 
-@keyframes scroll {
-    0% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50%) translateY(20px);
-        opacity: 0;
-    }
-}
+		@keyframes scroll {
+			0% {
+				transform: translateX(-50%) translateY(0);
+				opacity: 1;
+			}
 
-@keyframes arrow {
-    0% {
-        transform: rotate(45deg) translate(0, 0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(45deg) translate(10px, 10px);
-        opacity: 0;
-    }
-}
+			100% {
+				transform: translateX(-50%) translateY(20px);
+				opacity: 0;
+			}
+		}
+
+		@keyframes arrow {
+			0% {
+				transform: rotate(45deg) translate(0, 0);
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			100% {
+				transform: rotate(45deg) translate(10px, 10px);
+				opacity: 0;
+			}
+		}
 
 
 		/* 드롭다운 기본 스타일 */
@@ -181,7 +184,7 @@
 			align-items: center;
 		}
 
-		.dropdown a{
+		.dropdown a {
 			font-weight: bold;
 		}
 
@@ -303,7 +306,7 @@
 			display: block;
 		}
 
-		.dropdown-content a:hover{
+		.dropdown-content a:hover {
 			font-weight: bold;
 		}
 
@@ -593,13 +596,18 @@
 			text-align: center;
 		}
 
-		.first-section .content-box h2,
 		.first-section .content-box p {
 			width: 100%;
 			text-align: center;
 			margin: 20px auto;
 		}
 
+		.first-section .content-box h2 {
+			width: 100%;
+			text-align: center;
+			margin: 20px auto;
+			font-weight: 900;
+		}
 
 
 		/* 페이드 애니메이션 기본 설정 */
@@ -624,13 +632,47 @@
 		}
 
 		.second-section {
-			background: #001c54;
+			background: url(./images/켐원_배경_d.jpg);
 			color: #fff;
+			background-attachment: fixed;
+			position: relative;
+			background-position: center;
+			background-size: cover;
+			padding: 300px 0;
+		}
+
+		/* 어두운 오버레이 추가 */
+		.second-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.6);
+			z-index: 1;
+		}
+
+		/* 컨텐츠가 오버레이 위에 보이도록 설정 */
+		.second-section .content-box {
+			position: relative;
+			z-index: 2;
 		}
 
 		.second-section p {
 			color: #dcdcdc;
 			font-weight: 600;
+			position: relative;
+			z-index: 2;
+		}
+
+		.second-section .content-box {
+			position: relative;
+			z-index: 2;
+		}
+
+		.second-section .content-box h2 {
+			font-weight: 900;
 		}
 
 		.second-section .fade-item {
@@ -639,6 +681,10 @@
 
 		.third-section .fade-item {
 			transition: all 1s ease-out;
+		}
+
+		.third-section .content-box h2 {
+			font-weight: 900;
 		}
 
 		.fade-item.active,
@@ -659,8 +705,8 @@
 			display: flex;
 			justify-content: center;
 			gap: 40px;
-			margin: 50px auto;
-			padding: 20px;
+			margin: 80px auto;
+			padding: 40px 20px;
 			flex-wrap: wrap;
 		}
 
@@ -769,12 +815,12 @@
 
 		.image-text {
 			width: 100%;
-			margin-top: 20px;
+			margin-top: 30px;
 			text-align: center;
 			display: flex;
 			flex-direction: column;
-			gap: 8px;
-			min-height: 60px;
+			gap: 12px;
+			min-height: 80px;
 			/* 텍스트 영역 높이 고정 */
 		}
 
@@ -783,7 +829,7 @@
 		}
 
 		.footer {
-			background-color: #f8f8f8;
+			background-color: #dddddd;
 			padding: 50px 0;
 			margin-top: 100px;
 		}
@@ -801,9 +847,21 @@
 			flex: 0 0 200px;
 		}
 
+		.footer-logo a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.footer-logo a:hover img {
+			opacity: 0.8;
+		}
+
+
 		.footer-logo img {
 			width: 100%;
 			height: auto;
+			transition: opacity 0.3s ease;
 		}
 
 		.footer-info {
@@ -813,7 +871,7 @@
 
 		.footer-info p {
 			margin: 5px 0;
-			color: #666;
+			color: #333;
 			font-size: 0.9rem;
 			line-height: 1.6;
 		}
@@ -845,6 +903,30 @@
 			position: absolute;
 			transition: all 0.3s ease;
 		}
+
+		/* 스크롤 시 햄버거 메뉴 색상 */
+		header.scrolled .hamburger span {
+			background: #001c54;
+		}
+
+		/* 햄버거 메뉴 활성화 시 X 모양 */
+		.hamburger.active span:nth-child(1) {
+			transform: rotate(45deg);
+			top: 9px;
+			background: #001c54;
+		}
+
+		.hamburger.active span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.hamburger.active span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: 9px;
+			background: #001c54;
+		}
+
+
 
 		header.scrolled .hamburger span {
 			background: #001c54;
@@ -979,6 +1061,7 @@
 				left: 50%;
 				transform: translateX(-50%);
 				margin-left: 0;
+				z-index: 999;
 			}
 
 			.logo a {
@@ -1027,22 +1110,36 @@
 				justify-content: center;
 				align-items: center;
 				transition: right 0.5s ease;
-				z-index: 1000;
+				z-index: 1001;
 			}
 
-			/* 햄버거 메뉴 활성화 시에만 nav 표시 */
+			/* 햄버거 메뉴 아이콘 */
+			.hamburger {
+				display: block;
+				position: fixed;
+				right: 20px;
+				top: 30px;
+				width: 30px;
+				height: 20px;
+				z-index: 1002;
+				cursor: pointer;
+			}
+
+			/* 햄버거 메뉴 활성화 시 nav 표시 */
 			nav.active {
 				right: 0;
 				display: flex;
 			}
 
+
+			/* 드롭다운 컨테이너 활성화 시 표시 */
 			nav.active .dropdown-container {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				gap: 20px;
+				width: 100%;
+				padding: 20px;
 			}
-
 
 
 			/* 햄버거 메뉴 활성화 시에도 텍스트 색상 유지 */
@@ -1051,15 +1148,46 @@
 				color: #001c54 !important;
 			}
 
+			/* 메인 메뉴 스타일 */
 			.dropdown {
-				text-align: center;
-				margin: 10px 0;
+				width: 100%;
+				text-align: left;
+				border-bottom: 1px solid #eee;
+				padding: 15px 0;
 			}
 
+			.dropdown>a {
+				font-size: 1.3rem;
+				color: #001c54;
+				font-weight: bold;
+				display: block;
+				margin-bottom: 10px;
+			}
 
+			/* 하위 메뉴 스타일 */
+			.dropdown-box {
+				position: static;
+				display: block;
+				box-shadow: none;
+				padding: 0;
+				margin: 0;
+				background: transparent;
+			}
 
 			.dropdown-content {
-				min-width: 180px;
+				padding-left: 20px;
+			}
+
+			.dropdown-content a {
+				font-size: 1.1rem;
+				padding: 8px 0;
+				color: #666;
+				transition: all 0.3s ease;
+			}
+
+			.dropdown-content a:hover {
+				color: #001c54;
+				padding-left: 5px;
 			}
 
 
@@ -1144,6 +1272,8 @@
 				width: 100%;
 				text-align: center;
 			}
+
+
 		}
 	</style>
 </head>
@@ -1317,7 +1447,9 @@
 	<footer class="footer">
 		<div class="footer-content">
 			<div class="footer-logo">
-				<img src="/images/chemone_logo.png" alt="켐원 로고">
+				<a href="index.html">
+					<img src="/images/chemone_logo.png" alt="켐원 로고">
+				</a>
 			</div>
 			<div class="footer-info">
 				<p>Company : 켐원(ChemOne)</p>
